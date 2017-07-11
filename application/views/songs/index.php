@@ -3,7 +3,7 @@
 <div class="container">
     <h2>You are in the View: application/views/song/index.php (everything in this box comes from that file)</h2>
     <!-- add song form -->
-    <div>
+    <div> 
         <h3>Add a song</h3>
         <form action="<?php echo URL_WITH_INDEX_FILE; ?>songs/addsong" method="POST">
             <label>Artist</label>
@@ -14,7 +14,7 @@
             <input type="text" name="link" value="" />
             <input type="submit" name="submit_add_song" value="Submit" />
         </form>
-    </div>
+    </div> 
     <!-- main content output -->
     <div>
         <h3>Amount of songs (data from second model)</h3>

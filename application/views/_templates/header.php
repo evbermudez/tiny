@@ -7,7 +7,7 @@
 if (!$this) {
     exit(header('HTTP/1.0 403 Forbidden'));
 }
-
+ 
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@ if (!$this) {
     <!-- JS -->
     <!-- please note: The JavaScript files are loaded in the footer to speed up page construction -->
     <!-- See more here: http://stackoverflow.com/q/2105327/1114320 -->
-
+ 
     <!-- CSS -->
     <link href="<?php echo URL; ?>public/css/bulma.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/font-awesome.min.css" rel="stylesheet">

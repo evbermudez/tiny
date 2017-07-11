@@ -21,7 +21,7 @@ ini_set("display_errors", 1);
  * URL_SUB_FOLDER:
  * The sub-folder. Optional, comment this out if you don't use a sub-folder.
  *
- * URL_INDEX_FILE:
+ * URL_INDEX_FILE: 
  * Our index file that will be hit on every request to our application. No reason to change this in any way usually.
  *
  * URL:
@@ -30,7 +30,7 @@ ini_set("display_errors", 1);
  */
 
 define('URL_PROTOCOL', 'http://');
-define('URL_DOMAIN', $_SERVER['HTTP_HOST']);
+define('URL_DOMAIN', $_SERVER['HTTP_HOST']); 
 define('URL_SUB_FOLDER', 'pqs-billing');
 define('URL_INDEX_FILE', 'index.php' . '/');
 
