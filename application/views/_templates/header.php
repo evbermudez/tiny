@@ -21,6 +21,8 @@ if (!$this) {
     <!-- See more here: http://stackoverflow.com/q/2105327/1114320 -->
 
     <!-- CSS -->
+    <link href="<?php echo URL; ?>public/css/bulma.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>public/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
 </head>
 <body>

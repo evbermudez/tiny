@@ -5,7 +5,7 @@
  * Useful to show every little problem during development, but only show hard errors in production
  */
 error_reporting(E_ALL);
-ini_set("display_errors", 1);
+ini_set("display_errors", 1);	
 
 /**
  * Configuration for: URL
@@ -31,7 +31,7 @@ ini_set("display_errors", 1);
 
 define('URL_PROTOCOL', 'http://');
 define('URL_DOMAIN', $_SERVER['HTTP_HOST']);
-define('URL_SUB_FOLDER', 'tiny-master');
+define('URL_SUB_FOLDER', 'pqs-billing');
 define('URL_INDEX_FILE', 'index.php' . '/');
 
 // the final URLs, constructed with the elements above
@@ -51,4 +51,4 @@ define('DB_TYPE', 'mysql');
 define('DB_HOST', '127.0.0.1');
 define('DB_NAME', 'tiny');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'root');

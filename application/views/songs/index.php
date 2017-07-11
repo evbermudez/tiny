@@ -27,7 +27,7 @@
             <div id="javascript-ajax-result-box"></div>
         </div>
         <h3>List of songs (data from first model)</h3>
-        <table>
+        <table class="table is-bordered is-striped is-narrow">
             <thead style="background-color: #ddd; font-weight: bold;">
             <tr>
                 <td>Id</td>
@@ -49,8 +49,8 @@
                             <a href="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?></a>
                         <?php } ?>
                     </td>
-                    <td><a href="<?php echo URL_WITH_INDEX_FILE . 'songs/deletesong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
-                    <td><a href="<?php echo URL_WITH_INDEX_FILE . 'songs/editsong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
+                    <td><a class="button is-danger is-outlined" href="<?php echo URL_WITH_INDEX_FILE . 'songs/deletesong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
+                    <td><a class="button is-info is-outlined" href="<?php echo URL_WITH_INDEX_FILE . 'songs/editsong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
                 </tr>
             <?php } ?>
             </tbody>
