@@ -3,7 +3,8 @@ $(function() {
     // this is just a super-simple demo of JS
 
 	var demoHeaderBox;
-
+	var table_form = $('#form-list');
+	var modal_content;
     // simple demo to show create something via javascript on the page
     if ($('#javascript-header-demo-box').length !== 0) {
     	demoHeaderBox = $('#javascript-header-demo-box');
@@ -35,5 +36,90 @@ $(function() {
                 });
         });
     }
+
+	if (table_form.length !== 0) {
+		console.log("boom!");
+
+		table_form.DataTable();
+
+	}
+	
+	//if($('#modal').length !== 0){
+		$("#modal").iziModal({
+			onClosed: function(){
+				$('.modal-card-title').html('');
+				$('.modal-card-body').html('');
+				$('.modal-card-foot a:first-of-type').removeClass();
+				$('.modal-card-foot a:first-of-type').addClass('is-success button');
+				$('.modal-card-foot a:first-of-type').attr('name', '');
+			}
+		});
+	//}
+	
+	$(document).on('click', '.modal-trigger', function (event) {
+		event.preventDefault();
+		
+		if($(this).hasClass('modal-add-employee')){
+			modalAddEmployee();
+		}
+		if($(this).hasClass('modal-add-messenger')){
+			modalAddMessenger();
+		}
+		if($(this).hasClass('modal-add-form')){
+			modalAddForm();
+		}
+		if($(this).hasClass('modal-add-position')){
+			modalAddPosition();
+		}
+		$('#modal').iziModal('open');
+		
+	});
+
+	
+	function modalAddEmployee(){
+		var $title = 'Add Employee';
+		//var $content = '';
+		
+		$('.modal-card-title').html($title);
+		//$('.modal-card-body').html($content);
+		$('.modal-card-body').load(url + "app/addEmployeeModalTemplate");
+	}
+	function modalAddMessenger(){
+		var $content = "add messenger";
+		$('.modal-card-body').html($content);
+	}
+	function modalAddForm(){
+		var $content = "add form";
+		$('.modal-card-body').html($content);
+	}
+	
+	function modalAddPosition(){
+		var $title = "Add Position";
+		$('.modal-card-title').html($title);
+		$('.modal-card-body').load(url + "app/addPositionModalTemplate");
+		$('.modal-card-foot a:first-of-type').attr('name', 'submit_add_position');
+	}
+	
+	$(document).on('click','.modal-card-foot a:first-of-type', function(event){
+			$( ".modal-card-body form" ).submit();
+	});
+	
+	
+
+
+ 
+    $('#form-list tbody').on( 'click', 'tr', function () {
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            table.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    } );
+ 
+    $('#button_form_table_delete').click( function () {
+        table.row('.selected').remove().draw( false );
+    } );
 
 });

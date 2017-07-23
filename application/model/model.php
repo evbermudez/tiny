@@ -52,6 +52,18 @@ class Model
 
         $query->execute($parameters);
     }
+	
+	public function addPosition($name, $description)
+    {
+        $sql = "INSERT INTO postion (name, description, date_created, date_updated) VALUES (:name, :description, date('Y-m-d H:i:s'), date('Y-m-d H:i:s'))";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':name' => $name, ':description' => $description);
+
+        // useful for debugging: you can see the SQL behind above construction by using:
+        // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
+
+        $query->execute($parameters);
+    }
 
     /**
      * Delete a song in the database

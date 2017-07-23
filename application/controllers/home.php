@@ -18,7 +18,7 @@ class Home extends Controller
     {
         // load views
         require APP . 'views/_templates/header.php';
-        require APP . 'views/home/index.php';
+        require APP . 'views/app/index.php';
         require APP . 'views/_templates/footer.php';
     }
 
@@ -27,11 +27,11 @@ class Home extends Controller
      * This method handles what happens when you move to http://yourproject/home/exampleone
      * The camelCase writing is just for better readability. The method name is case-insensitive.
      */
-    public function exampleOne()
+    public function reimbursementForm()
     {
         // load views
         require APP . 'views/_templates/header.php';
-        require APP . 'views/home/example_one.php';
+        require APP . 'views/app/reimbursement-form.php';
         require APP . 'views/_templates/footer.php';
     }
 
