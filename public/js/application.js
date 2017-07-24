@@ -100,9 +100,7 @@ $(function() {
 		$('.modal-card-foot a:first-of-type').attr('name', 'submit_add_position');
 	}
 	
-	$(document).on('click','.modal-card-foot a:first-of-type', function(event){
-			$( ".modal-card-body form" ).submit();
-	});
+
 	
 	
 

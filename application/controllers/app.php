@@ -32,14 +32,7 @@ class App extends Controller
 	
 	public function addReimbursementForm()
     {
-        // if we have POST data to create a new song entry
-        if (isset($_POST["submit_add_reimbursement_form"])) {
-            // do addSong() in model/model.php
-            $this->model->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
-        }
-
-        // where to go after song has been added
-        header('location: ' . URL_WITH_INDEX_FILE . 'songs/index');
+        
     }
 	
 	public function addEmployeeModalTemplate(){

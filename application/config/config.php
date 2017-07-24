@@ -49,7 +49,8 @@ if (defined('URL_SUB_FOLDER')) {
  * This is the place where you define your database credentials, database type etc.
  */
 define('DB_TYPE', 'mysql');
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'tiny');
+//define('DB_HOST', '127.0.0.1');
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'pqs');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');

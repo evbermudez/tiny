@@ -12,10 +12,10 @@
 			<section class="modal-card-body">
 			
 			</section>
-			<footer class="modal-card-foot">
+			<!--<footer class="modal-card-foot">
 				<a class="button is-success" name="">Save changes</a>
 				<a class="button" data-izimodal-close="" data-izimodal-transitionout="bounceOutDown">Cancel</a>
-			</footer>
+			</footer>-->
 		</div>
 	</div>
 

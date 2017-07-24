@@ -55,7 +55,8 @@ class Model
 	
 	public function addPosition($name, $description)
     {
-        $sql = "INSERT INTO postion (name, description, date_created, date_updated) VALUES (:name, :description, date('Y-m-d H:i:s'), date('Y-m-d H:i:s'))";
+		
+        $sql = "INSERT INTO position (name, description) VALUES (:name, :description)";
         $query = $this->db->prepare($sql);
         $parameters = array(':name' => $name, ':description' => $description);
 
