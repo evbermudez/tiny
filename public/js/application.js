@@ -5,6 +5,9 @@ $(function() {
 	var demoHeaderBox;
 	var table_form = $('#form-list');
 	var modal_content;
+
+	//console.log(positions);
+
     // simple demo to show create something via javascript on the page
     if ($('#javascript-header-demo-box').length !== 0) {
     	demoHeaderBox = $('#javascript-header-demo-box');
@@ -83,6 +86,7 @@ $(function() {
 		$('.modal-card-title').html($title);
 		//$('.modal-card-body').html($content);
 		$('.modal-card-body').load(url + "app/addEmployeeModalTemplate");
+		$('.modal-card-foot a:first-of-type').attr('name', 'submit_add_employee');
 	}
 	function modalAddMessenger(){
 		var $content = "add messenger";
@@ -100,7 +104,72 @@ $(function() {
 		$('.modal-card-foot a:first-of-type').attr('name', 'submit_add_position');
 	}
 	
+	$(document).on('click', '.modal-card-foot a:first-of-type', function(event){
+		if($(this).attr('name') == "submit_add_position"){
+			submitAddPosition(
+				$('.modal-card-body').find('form input[name="name"]').val(),
+				$('.modal-card-body').find('form input[name="description"]').val()
+			);
+		}
 
+		if($(this).attr('name') == "submit_add_employee"){
+				console.log($('.modal-card-body').find('form input[name="first-name"]').val());
+
+			submitAddEmployee(
+				$('.modal-card-body').find('form input[name="first-name"]').val(),
+				$('.modal-card-body').find('form input[name="middle-name"]').val(),
+				$('.modal-card-body').find('form input[name="last-name"]').val(),
+				$('.modal-card-body').find('form select[name="position-id"] option:selected').val(),
+				
+			)
+		}
+	});
+
+	function closeModal(){
+		$('#close-modal').trigger("click");
+	}
+
+	function triggerForceLoad(){
+		$('.pace').toggleClass('pace-active pace-inactive');
+	}
+	
+	/*submit*/
+	function submitAddPosition($name, $description){
+		triggerForceLoad();
+		$.ajax({
+			url: url + "app/addPosition",
+			type: "post",
+			data: {name: $name, description: $description},
+			success: function (response) {
+			   	closeModal();
+				triggerForceLoad();      
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+			   console.log(textStatus, errorThrown);
+			}
+
+
+		});
+	}
+
+	function submitAddEmployee($first_name, $middle_name, $last_name, $position_id){
+		triggerForceLoad();
+		$.ajax({
+			url: url + "app/addEmployee",
+			type: "post",
+			data: {first_name: $first_name, middle_name: $middle_name, last_name:$last_name, position_id: $position_id},
+			success: function (response) {
+			   	  closeModal();
+			      triggerForceLoad();
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+			   console.log(textStatus, errorThrown);
+			   
+			}
+
+
+		});
+	}
 	
 	
 

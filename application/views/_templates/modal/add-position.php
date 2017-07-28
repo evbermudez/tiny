@@ -12,7 +12,6 @@
 			<input class="input is-medium" name="description" type="text" placeholder="Description">
 		  </div>
 		</div>
-		<input type="submit" class="button is-success" name="submit_add_position" value="Save"/>
-		<a class="button" data-izimodal-close="" data-izimodal-transitionout="bounceOutDown">Cancel</a>
+
 	</form>
 	

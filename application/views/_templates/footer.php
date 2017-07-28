@@ -12,10 +12,10 @@
 			<section class="modal-card-body">
 			
 			</section>
-			<!--<footer class="modal-card-foot">
+			<footer class="modal-card-foot">
 				<a class="button is-success" name="">Save changes</a>
-				<a class="button" data-izimodal-close="" data-izimodal-transitionout="bounceOutDown">Cancel</a>
-			</footer>-->
+				<a class="button" id="close-modal" data-izimodal-close="" data-izimodal-transitionout="bounceOutDown">Cancel</a>
+			</footer>
 		</div>
 	</div>
 
@@ -26,13 +26,12 @@
 
     <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
     <script>
-        var url = "<?php echo URL_WITH_INDEX_FILE; ?>";
+		var url = "<?php echo URL_WITH_INDEX_FILE; ?>";
     </script>
 
     <!-- our JavaScript -->
-    <!--<script src="<?php echo URL; ?>public/js/materialize.min.js"></script>
-    <script src="<?php echo URL; ?>public/js/datatables.min.js"></script>-->
     <script src="<?php echo URL; ?>public/node_modules/izimodal/js/iziModal.js"></script>
+    <script src="<?php echo URL; ?>public/js/pace.min.js"></script>
     <script src="<?php echo URL; ?>public/js/application.js"></script>
 </body>
 </html>

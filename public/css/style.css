@@ -2,3 +2,12 @@
 button i{
 	margin-right: 5px;
 }
+.panel{
+	background:#f0f8ff;
+}
+.panel-heading{
+	background:#23d160;
+}
+.panel-heading h2{
+	color:#fff;
+}

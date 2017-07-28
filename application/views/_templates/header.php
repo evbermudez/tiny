@@ -25,6 +25,7 @@ if (!$this) {
     <link href="<?php echo URL; ?>public/css/bulma.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/node_modules/izimodal/css/iziModal.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>public/css/pace.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
 </head>
 <body>

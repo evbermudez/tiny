@@ -36,20 +36,20 @@ class App extends Controller
     }
 	
 	public function addEmployeeModalTemplate(){
+        $positions = $this->model->getAllPosition();
 		require APP . 'views/_templates/modal/add-employee.php';
 	}
 	
 	public function addPositionModalTemplate(){
 		require APP . 'views/_templates/modal/add-position.php';
 	}
-	
-	public function addPosition(){
-		
-        if (isset($_POST["submit_add_position"])) {
-            $this->model->addPosition($_POST["name"], $_POST["description"]);
-        }
 
-        // where to go after song has been added
-        header('location: ' . URL_WITH_INDEX_FILE . 'app/index');
+	public function addPosition(){
+            $this->position_model->addPosition($_POST["name"], $_POST["description"]);
 	}
+
+    public function addEmployee(){
+            $this->employee_model->addEmployee($_POST["first_name"], $_POST["middle_name"], $_POST["last_name"], $_POST["position_id"]);
+	}
+
 }
