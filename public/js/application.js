@@ -5,8 +5,18 @@ $(function() {
 	var demoHeaderBox;
 	var table_form = $('#form-list');
 	var modal_content;
+	
+	console.log(url + 'app/getAllPosition');
 
-	//console.log(positions);
+	//MAO NI KOYA KIM
+	$('#table-position').DataTable( {
+        "ajax": url + '/app/getAllPositions',
+		"columns": [
+            { "data": "id" },
+            { "data": "name" }
+        ]
+    } );
+	
 
     // simple demo to show create something via javascript on the page
     if ($('#javascript-header-demo-box').length !== 0) {
@@ -40,12 +50,12 @@ $(function() {
         });
     }
 
-	if (table_form.length !== 0) {
+	/*if (table_form.length !== 0) {
 		console.log("boom!");
 
 		table_form.DataTable();
 
-	}
+	}*/
 	
 	//if($('#modal').length !== 0){
 		$("#modal").iziModal({
@@ -55,7 +65,8 @@ $(function() {
 				$('.modal-card-foot a:first-of-type').removeClass();
 				$('.modal-card-foot a:first-of-type').addClass('is-success button');
 				$('.modal-card-foot a:first-of-type').attr('name', '');
-			}
+			},
+			transitionIn: "fadeInDown"
 		});
 	//}
 	
@@ -90,7 +101,8 @@ $(function() {
 	}
 	function modalAddMessenger(){
 		var $content = "add messenger";
-		$('.modal-card-body').html($content);
+		$('.modal-card-body').load(url + "app/addMessengerModalTemplate");
+		$('.modal-card-foot a:first-of-type').attr('name', 'submit_add_messenger');
 	}
 	function modalAddForm(){
 		var $content = "add form";
@@ -123,6 +135,14 @@ $(function() {
 				
 			)
 		}
+		
+		if($(this).attr('name') == "submit_add_messenger"){
+			submitAddMessenger(
+				$('.modal-card-body').find('form input[name="code"]').val(),
+				$('.modal-card-body').find('form input[name="name"]').val(),
+				$('.modal-card-body').find('form input[name="description"]').val()
+			);
+		}
 	});
 
 	function closeModal(){
@@ -146,6 +166,25 @@ $(function() {
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 			   console.log(textStatus, errorThrown);
+			}
+
+
+		});
+	}
+	
+	function submitAddMessenger($code, $name, $description){
+		triggerForceLoad();
+		$.ajax({
+			url: url + "app/addMessenger",
+			type: "post",
+			data: {code: $code, name: $name, description: $description},
+			success: function (response) {
+			   	closeModal();
+				triggerForceLoad();      
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+			   console.log(textStatus, errorThrown);
+			   
 			}
 
 

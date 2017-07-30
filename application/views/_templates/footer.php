@@ -23,6 +23,7 @@
     <!-- jQuery, loaded in the recommended protocol-less way -->
     <!-- more http://www.paulirish.com/2010/the-protocol-relative-url/ -->
     <script src="<?php echo URL; ?>public/js/jquery-2.1.1.min.js"></script>
+	
 
     <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
     <script>
@@ -32,6 +33,7 @@
     <!-- our JavaScript -->
     <script src="<?php echo URL; ?>public/node_modules/izimodal/js/iziModal.js"></script>
     <script src="<?php echo URL; ?>public/js/pace.min.js"></script>
+    <script src="<?php echo URL; ?>public/js/datatables.min.js"></script>
     <script src="<?php echo URL; ?>public/js/application.js"></script>
 </body>
 </html>

@@ -67,19 +67,6 @@ class Model
         $query->execute($parameters);
     }
 
-    public function getAllPosition()
-    {
-        $sql = "SELECT * FROM position";
-        $query = $this->db->prepare($sql);
-        $query->execute();
-
-        // fetchAll() is the PDO method that gets all result rows, here in object-style because we defined this in
-        // core/controller.php! If you prefer to get an associative array as the result, then do
-        // $query->fetchAll(PDO::FETCH_ASSOC); or change core/controller.php's PDO options to
-        // $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC ...
-        return $query->fetchAll();
-    }
-
     /**
      * Delete a song in the database
      * Please note: this is just an example! In a real application you would not simply let everybody

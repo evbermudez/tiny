@@ -234,7 +234,7 @@
 					
 				</div>
 				<div class="panel-block">
-					<table class="table is-bordered is-striped">
+					<table class="table is-bordered is-striped" id="table-position">
 						<thead>
 							<tr>
 								<th>ID</th>
@@ -242,46 +242,16 @@
 							</tr>
 						</thead>
 						<tbody>
+						<!--<?php //foreach ($positions as $position) { ?>
 							<tr>
-								<th>1</th>
-								<th>SUCREX</th>
+								<td>
+								<?php //if (isset($position->id)) echo htmlspecialchars($position->id, ENT_QUOTES, 'UTF-8'); ?>
+								</td>
+								<td>
+								<?php //if (isset($position->name)) echo htmlspecialchars($position->name, ENT_QUOTES, 'UTF-8'); ?>
+								</td>
 							</tr>
-							<tr>
-								<th>2</th>
-								<th>AMBOT</th>
-							</tr>
-							<tr>
-								<th>3</th>
-								<th>WA-IL</th>
-							</tr>
-							<tr>
-								<th>4</th>
-								<th>AAA</th>
-							</tr>
-							<tr>
-								<th>5</th>
-								<th>BBB</th>
-							</tr>
-							<tr>
-								<th>6</th>
-								<th>CCC</th>
-							</tr>
-							<tr>
-								<th>7</th>
-								<th>DDD</th>
-							</tr>
-							<tr>
-								<th>8</th>
-								<th>EEE</th>
-							</tr>
-							<tr>
-								<th>9</th>
-								<th>FFF</th>
-							</tr>
-							<tr>
-								<th>10</th>
-								<th>GGG</th>
-							</tr>
+						<?php // ?>-->
 						</tbody>
 						<tfoot>
 							<tr>

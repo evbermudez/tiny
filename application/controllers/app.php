@@ -16,6 +16,7 @@ class App extends Controller
      */
     public function index()
     {
+		$positions = $this->position_model->getAllPosition();
         // load views
         require APP . 'views/_templates/header.php';
         require APP . 'views/app/index.php';
@@ -36,16 +37,28 @@ class App extends Controller
     }
 	
 	public function addEmployeeModalTemplate(){
-        $positions = $this->model->getAllPosition();
+        $positions = $this->position_model->getAllPosition();
 		require APP . 'views/_templates/modal/add-employee.php';
 	}
 	
 	public function addPositionModalTemplate(){
 		require APP . 'views/_templates/modal/add-position.php';
 	}
+	
+	public function addMessengerModalTemplate(){
+		require APP . 'views/_templates/modal/add-messenger.php';
+	}
+	
+	public function getAllPositions(){
+		echo json_encode($this->position_model->getAllPosition());
+	}		
 
 	public function addPosition(){
             $this->position_model->addPosition($_POST["name"], $_POST["description"]);
+	}
+	
+	public function addMessenger(){
+            $this->messenger_model->addMessenger($_POST["code"], $_POST["name"], $_POST["description"]);
 	}
 
     public function addEmployee(){

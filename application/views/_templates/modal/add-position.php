@@ -1,5 +1,5 @@
 
-	<form action="<?php echo URL_WITH_INDEX_FILE; ?>app/addposition" method="POST">
+	<form>
 	<!--<form>-->
 		<div class="field">
 		  <div class="control">
