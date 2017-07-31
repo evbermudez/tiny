@@ -54,7 +54,7 @@ class Model
     }
 	
     
-	public function addPosition($name, $description)
+	/*public function addPosition($name, $description)
     {
 
         $sql = "INSERT INTO position (name, description) VALUES (:name, :description)";
@@ -65,7 +65,7 @@ class Model
         // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
 
         $query->execute($parameters);
-    }
+    }*/
 
     /**
      * Delete a song in the database

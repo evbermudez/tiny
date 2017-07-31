@@ -17,6 +17,8 @@ class App extends Controller
     public function index()
     {
 		$positions = $this->position_model->getAllPosition();
+		$messengers = $this->messenger_model->getAllMessenger();
+		$employees = $this->employee_model->getAllEmployee();
         // load views
         require APP . 'views/_templates/header.php';
         require APP . 'views/app/index.php';
@@ -51,7 +53,12 @@ class App extends Controller
 	
 	public function getAllPositions(){
 		echo json_encode($this->position_model->getAllPosition());
+		//echo json_encode($this->position_model->getAllPosition());
+		//echo $data;
 	}		
+	public function getJsonAllPosition(){
+		$this->position_model->getJsonAllPosition();
+	}
 
 	public function addPosition(){
             $this->position_model->addPosition($_POST["name"], $_POST["description"]);
@@ -64,5 +71,18 @@ class App extends Controller
     public function addEmployee(){
             $this->employee_model->addEmployee($_POST["first_name"], $_POST["middle_name"], $_POST["last_name"], $_POST["position_id"]);
 	}
+	
+	public function editPosition($position_id)
+    {
+        // if we have an id of a song that should be edited
+        if (isset($position_id)) {
+            // do getSong() in model/model.php
+            $position = $this->position_model->getPosition($position_id);
+
+            
+        } else {
+            
+        }
+    }
 
 }

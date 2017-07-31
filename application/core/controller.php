@@ -13,7 +13,7 @@ class Controller
     /**
      * @var null Model
      */
-    //public $model = null;
+    public $model = null;
     public $employee_model = null;
     public $position_model = null;
     public $messenger_model = null;

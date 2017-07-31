@@ -5,16 +5,30 @@ $(function() {
 	var demoHeaderBox;
 	var table_form = $('#form-list');
 	var modal_content;
-	
-	console.log(url + 'app/getAllPosition');
+	//var $tablePosition = $('#table-position');
+	//console.log(url + 'app/getAllPosition');
 
 	//MAO NI KOYA KIM
+	
 	$('#table-position').DataTable( {
-        "ajax": url + '/app/getAllPositions',
+		//"processing": true,
+        /*"serverSide": true,
+        "ajax": {
+					'url': url + 'app/getAllPositions',
+					'type': 'POST'
+				}
 		"columns": [
             { "data": "id" },
             { "data": "name" }
-        ]
+        ]*/
+		
+		"bProcessing": true,
+		"sAjaxSource": url + 'app/getJsonAllPosition',
+		"aoColumns": [
+			{ mData: 'id' } ,
+			{ mData: 'name' },
+		]
+        
     } );
 	
 

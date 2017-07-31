@@ -11,3 +11,11 @@ button i{
 .panel-heading h2{
 	color:#fff;
 }
+
+.action-button button{
+	display: block;
+	width:100%;
+}
+.action-button button:first-of-type{
+	margin-bottom: 5px;
+}
