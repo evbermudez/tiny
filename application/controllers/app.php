@@ -16,6 +16,24 @@ class App extends Controller
      */
     public function index()
     {
+        // Check if has post data. ex: Ajax calls
+        if(!empty($_POST)) {
+            $request = $_POST;
+            // Check and allow only specific actions
+            switch($request['action']) {
+                // Get data position, for datatables
+                case "getPosition":
+                    return $this->getAllPositions($request);
+                    break;
+                // Default catch, just return false
+                default:
+                    echo json_encode(false);
+                    break;
+            }
+            exit; // End Ajax
+        }
+
+        // ELSE, index page
 		$positions = $this->position_model->getAllPosition();
 		$messengers = $this->messenger_model->getAllMessenger();
 		$employees = $this->employee_model->getAllEmployee();
@@ -51,8 +69,16 @@ class App extends Controller
 		require APP . 'views/_templates/modal/add-messenger.php';
 	}
 	
-	public function getAllPositions(){
-		echo json_encode($this->position_model->getAllPosition());
+	public function getAllPositions($request=null){
+		$data = $this->position_model->getAllPosition();
+        $output = [
+    		"draw"				=> $request['draw'],
+    		"data"				=> $data,
+    		"recordsTotal"		=> count($data),
+    		"recordsFiltered"	=> count($data)
+        ];
+		echo json_encode($output);
+        exit;
 		//echo json_encode($this->position_model->getAllPosition());
 		//echo $data;
 	}		
