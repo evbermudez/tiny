@@ -10,26 +10,27 @@ $(function() {
 
 	//MAO NI KOYA KIM
 	
-	/*$('#table-position').DataTable( {
-		//"processing": true,
+	$('#table-position').DataTable({
+		"processing": true,
         "serverSide": true,
         "ajax": {
-					'url': url + 'app/getAllPositions',
-					'type': 'POST'
-				}
+			'url': '/',
+			'type': 'POST',
+			'data': function(d) {
+				d.action = "getPosition";
+			},
+		},
 		"columns": [
             { "data": "id" },
             { "data": "name" }
-        ]
-		
-		"bProcessing": true,
-		"sAjaxSource": url + 'app/getJsonAllPosition',
-		"aoColumns": [
-			{ mData: 'id' } ,
-			{ mData: 'name' },
-		]
-        
-    } );*/
+        ],
+		// "bProcessing": true,
+		// "sAjaxSource": url + 'app/getJsonAllPosition',
+		// "aoColumns": [
+		// 	{ mData: 'id' } ,
+		// 	{ mData: 'name' },
+		// ]
+	});
 	
 
     // simple demo to show create something via javascript on the page
