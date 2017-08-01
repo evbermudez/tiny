@@ -24,7 +24,7 @@
 							<tbody>
 								<?php foreach ($employees as $employee) { ?>
 								<tr>
-									<td>
+									<td class="hightlight-bold">
 									<?php if (isset($employee->last_name)) echo htmlspecialchars($employee->last_name, ENT_QUOTES, 'UTF-8'); ?>,
 									
 									<?php if (isset($employee->first_name)) echo htmlspecialchars($employee->first_name, ENT_QUOTES, 'UTF-8'); ?>
@@ -71,7 +71,7 @@
 							<tbody>
 								<?php foreach ($messengers as $messenger) { ?>
 								<tr>
-									<td>
+									<td class="hightlight-bold">
 									<?php if (isset($messenger->name)) echo htmlspecialchars($messenger->name, ENT_QUOTES, 'UTF-8'); ?>
 									</td>
 									<td class="action-button">
@@ -189,7 +189,7 @@
 							<tbody>
 								<?php foreach ($positions as $position) { ?>
 								<tr>
-									<td>
+									<td class="hightlight-bold">
 										<?php if (isset($position->name)) echo htmlspecialchars($position->name, ENT_QUOTES, 'UTF-8'); ?>
 									</td>
 									<td class="action-button">

@@ -10,9 +10,9 @@ $(function() {
 
 	//MAO NI KOYA KIM
 	
-	$('#table-position').DataTable( {
+	/*$('#table-position').DataTable( {
 		//"processing": true,
-        /*"serverSide": true,
+        "serverSide": true,
         "ajax": {
 					'url': url + 'app/getAllPositions',
 					'type': 'POST'
@@ -20,7 +20,7 @@ $(function() {
 		"columns": [
             { "data": "id" },
             { "data": "name" }
-        ]*/
+        ]
 		
 		"bProcessing": true,
 		"sAjaxSource": url + 'app/getJsonAllPosition',
@@ -29,7 +29,7 @@ $(function() {
 			{ mData: 'name' },
 		]
         
-    } );
+    } );*/
 	
 
     // simple demo to show create something via javascript on the page

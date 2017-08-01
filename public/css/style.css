@@ -19,3 +19,7 @@ button i{
 .action-button button:first-of-type{
 	margin-bottom: 5px;
 }
+
+.hightlight-bold{
+	font-weight: bold;
+}
